@@ -128,8 +128,24 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Bench",
-        duration: 30,
-        distance: 2
+        weight: 300,
+        reps: 10,
+        sets: 4,
+        duration: 10,
+      }, 
+      {
+        type: "resistance",
+        name: "Bench2",
+        weight: 300,
+        reps: 10,
+        sets: 4,
+        duration: 20,
+      },
+      {
+        type: "cardio",
+        name: "Bike",
+        duration: 99,
+        distance: 99
       }
     ]
   }
@@ -145,3 +161,5 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+
+ 
