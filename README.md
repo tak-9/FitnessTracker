@@ -9,6 +9,7 @@ This is a workout tracker using MongoDB. A user can view and track daily workout
 1.	Ensure MongoDB and node.js is installed. 
 2.	npm install 
 3.	node server.js 
+4.  node ./seeders/seed.js
 4.	Open it by a web browser. 
 
 ## Usage 
