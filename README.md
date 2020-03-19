@@ -1,12 +1,14 @@
 # FitnessTracker
 
 This is a workout tracker using MongoDB. A user can view and track daily workouts.  A user can track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, a user can track my distance travelled.
+
 ## Setup
 1.	Ensure MongoDB and node.js is installed. 
 2.	npm install 
 3.	node server.js 
 4.	Open it by a web browser. 
-##Usage 
+
+## Usage 
 Application has been deployed to herorku. Access the following URL to open the web application.
 
 http://fitnesstracker-tak.herokuapp.com/
@@ -35,6 +37,6 @@ I have fixed the following issues with the frontend supplied by the course.
 * It is now checked both by frontend using regular expression in JavaScript and backend using mongoose.
 
 
-(./doc/screencapture_lp.jpg)
+<img src="./doc/screencapture_lp.jpg" width=400px>
 
-(./doc/screencapture.png)
+<img src="/doc/screencapture.png" width=400px>
