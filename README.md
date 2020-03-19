@@ -32,7 +32,7 @@ I have fixed the following issues with the frontend supplied by the course.
 * Added a photo and icons to improve the look and feel. 
 * Fixed TotalDuration.
 * A successful message is always shown even when an error occurs in backend. An error message is not displayed when database operation (such as select, insert or update) is unsuccessful. I have fixed it so that an error message is displayed when error code is received from backend. 
-* API.js in frontend does not pass the HTTP Error codes to the other JavaScript. Added error handling to fix issue.
+* API.js in frontend does not pass the HTTP Error codes to other JavaScript where it's called from. Added error handling code to fix issue.
 * Fixed successful message rendering. 
 * Fixed issues with validation. A negative value can be entered where it should be allowed. 
 * Fixed issues in which you cannot enter double value in ‘Weight’ and ‘Distance’. 
