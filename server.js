@@ -47,7 +47,7 @@ app.get("/api/workouts", (req, res) => {
         })
         .catch(err => {
             console.log(err)
-            res.json(err);
+            res.status(500).json(err);
         })
 });
 
@@ -85,15 +85,15 @@ app.put("/api/workouts/:id", (req, res) => {
     db.Workout.findOneAndUpdate(
         { day: {$gt: todayStart, $lt: todayEnd} },
         { day:now , $push: { exercises :tempJSON.exercises}},
-        { upsert: true }
+        { upsert: true , runValidators: true }
         )
     .then((dbResult) => {
         console.log("*** findOneAndUpdate:", dbResult);
-        //res.json(dbResult);
+        res.json(dbResult);
     })
     .catch(err => {
-        console.log(err);
-        res.json(err)
+        console.log("*** error ***",err);
+        res.status(500).json(err)
     });
 
 
@@ -116,7 +116,7 @@ app.get("/api/workouts/range", (req, res) => {
         })
         .catch(err => {
             console.log(err)
-            res.json(err);
+            res.status(500).json(err);
         })
 });
 
