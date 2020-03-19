@@ -2,6 +2,9 @@
 
 This is a workout tracker using MongoDB. A user can view and track daily workouts.  A user can track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, a user can track my distance travelled.
 
+<img src="./doc/screencapture_lp.jpg" width=400px> <img src="/doc/screencapture.png" width=400px>
+
+
 ## Setup
 1.	Ensure MongoDB and node.js is installed. 
 2.	npm install 
@@ -36,7 +39,3 @@ I have fixed the following issues with the frontend supplied by the course.
 * Implemented new validation by frontend using regular expression.
 * It is now checked both by frontend using regular expression in JavaScript and backend using mongoose.
 
-
-<img src="./doc/screencapture_lp.jpg" width=400px>
-
-<img src="/doc/screencapture.png" width=400px>
