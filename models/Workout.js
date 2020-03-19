@@ -34,11 +34,28 @@ const workoutSchema = new Schema({
 const ExcerciseSchema = new Schema({
     type: String,
     name: String,
-    duration: Number,
-    weight: Number,
-    reps: Number,
-    sets: Number,
-    distance: Number
+    duration: {
+        type: Number, 
+        min: [0, 'Negative number is not allowed']
+    },
+    weight: {
+        type: Number, 
+        min: [0, 'Negative number is not allowed']
+    },
+    reps: {
+        type: Number,
+        min: [0, 'Negative number is not allowed'],
+        validate: {validator: Number.isInteger, message: '{VALUE} is not integer'}
+    },
+    sets: {
+        type: Number, 
+        min: [0, 'Negative number is not allowed'], 
+        validate: {validator: Number.isInteger, message: '{VALUE} is not integer'}
+    },
+    distance: {
+        type: Number, 
+        min: [0, 'Negative number is not allowed']
+    },
 });
 
 const workoutSchema = new Schema({
