@@ -4,11 +4,17 @@ const API = {
     try {
       res = await fetch("/api/workouts");
     } catch (err) {
-      console.log(err)
+      console.log("err",err);
+      throw res;
     }
     const json = await res.json();
-
-    return json[json.length - 1];
+    if (res.ok) {
+      // If HTTP status is 200-299 (Normal case)
+      return json[json.length - 1];
+    } else {
+      // Error case 
+      throw json;
+    }
   },
   async addExercise(data) {
     const id = location.search.split("=")[1];
@@ -20,8 +26,13 @@ const API = {
     });
 
     const json = await res.json();
-
-    return json;
+    if (res.ok) {
+      // If HTTP status is 200-299 (Normal case)
+      return json;
+     } else {
+      // Error case 
+      throw json;
+    }
   },
   async createWorkout(data = {}) {
     const res = await fetch("/api/workouts", {
@@ -31,14 +42,26 @@ const API = {
     });
 
     const json = await res.json();
-
-    return json;
+    if (res.ok) {
+      // If HTTP status is 200-299 (Normal case)
+      return json;
+     } else {
+      // Error case 
+      throw json;
+    }
   },
 
   async getWorkoutsInRange() {
     const res = await fetch(`/api/workouts/range`);
     const json = await res.json();
 
-    return json;
+    if (res.ok) {
+      // If HTTP status is 200-299 (Normal case)
+      return json;
+     } else {
+      // Error case 
+      throw json;
+    }
+
   },
 };

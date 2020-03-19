@@ -12,6 +12,7 @@ const distanceInput = document.querySelector("#distance");
 const completeButton = document.querySelector("button.complete");
 const addButton = document.querySelector("button.add-another");
 const toast = document.querySelector("#toast");
+const errorMsg = document.querySelector("#errorMsg");
 const newWorkout = document.querySelector(".new-workout")
 
 let workoutType = null;
@@ -114,9 +115,16 @@ async function handleFormSubmit(event) {
     workoutData.duration = Number(resistanceDurationInput.value.trim());
   }
 
-  await API.addExercise(workoutData);
-  clearInputs();
-  toast.classList.add("success");
+  API.addExercise(workoutData)
+  .then(() => { 
+    errorMsg.innerHTML = "";
+    clearInputs();
+    toast.classList.add("success");      
+  })
+  .catch((err) =>{
+    errorMsg.innerHTML = err.message + "<br>";
+    //alert("Error", err.message);
+  })
 }
 
 function handleToastAnimationEnd() {

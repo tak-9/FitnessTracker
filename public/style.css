@@ -435,3 +435,7 @@ form > button {
     right: -320px;
   }
 }
+
+#errorMsg {
+  color: red;
+}
