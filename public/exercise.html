@@ -22,6 +22,7 @@
     <div class="ui container exercise">
       <div class="ui raised card m-auto">
         <h2>Add Your Exercise</h2>
+        <div id="errorMsg"></div>
         <form action="POST">
           <div class="workout-type">
             <label for="type">Exercise Type:</label>
@@ -38,11 +39,11 @@
             </div>
             <div class="distance">
               <label for="distance">Distance (miles):</label>
-              <input type="number" name="distance" id="distance" placeholder="5" />
+              <input type="number" name="distance" id="distance" min="0" placeholder="5" />
             </div>
             <div class="duration">
               <label for="duration">Duration (minutes):</label>
-              <input type="number" name="duration" id="duration" placeholder="10" />
+              <input type="number" name="duration" id="duration" min="0" placeholder="10" />
             </div>
           </div>
           <div class="resistance-form d-none">
@@ -52,19 +53,19 @@
             </div>
             <div class="weight">
               <label for="weight">Weight (lbs):</label>
-              <input type="number" name="weight" id="weight" placeholder="200" />
+              <input type="number" name="weight" id="weight" min="0" placeholder="200" />
             </div>
             <div class="sets">
               <label for="sets">Sets:</label>
-              <input type="number" name="sets" id="sets" placeholder="4" />
+              <input type="number" name="sets" id="sets" min="0" placeholder="4" />
             </div>
             <div class="reps">
               <label for="reps">Reps:</label>
-              <input type="number" name="reps" id="reps" placeholder="10" />
+              <input type="number" name="reps" id="reps" min="0" placeholder="10" />
             </div>
             <div class="resistance-duration">
               <label for="resistance-duration">Duration (minutes):</label>
-              <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10" />
+              <input type="number" name="resistance-duration" id="resistance-duration" min="0" placeholder="10" />
             </div>
           </div>
           <div class="buttons">
