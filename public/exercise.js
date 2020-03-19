@@ -52,21 +52,25 @@ function handleWorkoutTypeChange(event) {
 
 function validateInputs() {
   let isValid = true;
+  let positiveIntegerRegEx = /^\d+$/;
+  let positiveNumberRegEx = /^\d+\.\d*/; // Allow float or double
 
   if (workoutType === "resistance") {
     if (nameInput.value.trim() === "") {
       isValid = false;
     }
 
-    if (weightInput.value.trim() === "") {
+    if (weightInput.value.trim() === "" || (!(positiveNumberRegEx.test(weightInput.value.trim())))) {
       isValid = false;
     }
 
-    if (setsInput.value.trim() === "") {
+    // Allow positive integer only
+    if (setsInput.value.trim() === "" || (!(positiveIntegerRegEx.test(setsInput.value.trim())))) {
       isValid = false;
     }
 
-    if (repsInput.value.trim() === "") {
+    // Allow positive integer only
+    if (repsInput.value.trim() === "" || (!(positiveIntegerRegEx.test(repsInput.value.trim())))) {
       isValid = false;
     }
 
@@ -78,11 +82,11 @@ function validateInputs() {
       isValid = false;
     }
 
-    if (durationInput.value.trim() === "") {
+    if (durationInput.value.trim() === "" || (!(positiveNumberRegEx.test(durationInput.value.trim())))) {
       isValid = false;
     }
 
-    if (distanceInput.value.trim() === "") {
+    if (distanceInput.value.trim() === "" || (!(positiveNumberRegEx.test(distanceInput.value.trim())))) {
       isValid = false;
     }
   }

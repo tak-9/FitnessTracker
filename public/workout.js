@@ -17,13 +17,13 @@ async function initWorkout() {
   
       renderWorkoutSummary(workoutSummary);
     } else {
-      renderNoWorkoutText()
+      renderErrorText("You have not created a workout yet!");
     }
   })
   .catch((err) => {
-    console.log("error!!!",err);
-    document.querySelector("#errorMsg").innerHTML = err.name;
-  })
+    console.log("Database error!!",err);
+    renderErrorText("Database Error! "+ JSON.stringify(err));
+  });
 }
 
 function tallyExercises(exercises) {
@@ -82,11 +82,11 @@ function renderWorkoutSummary(summary) {
   });
 }
 
-function renderNoWorkoutText() {
+function renderErrorText(msg) {
   const container = document.querySelector(".workout-stats");
   const p = document.createElement("p");
   const strong = document.createElement("strong");
-  strong.textContent = "You have not created a workout yet!"
+  strong.textContent = msg;
 
   p.appendChild(strong);
   container.appendChild(p);

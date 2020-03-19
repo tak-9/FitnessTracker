@@ -4,8 +4,8 @@ const API = {
     try {
       res = await fetch("/api/workouts");
     } catch (err) {
-      console.log("err",err);
-      throw res;
+      console.log("Err",err);
+      throw err;
     }
     const json = await res.json();
     if (res.ok) {
