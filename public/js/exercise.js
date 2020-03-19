@@ -43,11 +43,7 @@ function handleWorkoutTypeChange(event) {
     resistanceForm.classList.add("d-none");       
   } else if (workoutType === "resistance") {
     resistanceForm.classList.remove("d-none");
-    cardioForm.classList.add("d-none");
-    // wrapper.style.display = "none";
-    // wrapper.style.display = "block";
-    wrapper.offsetHeight;
- 
+    cardioForm.classList.add("d-none"); 
   } else {
     cardioForm.classList.add("d-none");
     resistanceForm.classList.add("d-none");
