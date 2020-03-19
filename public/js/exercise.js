@@ -13,7 +13,9 @@ const completeButton = document.querySelector("button.complete");
 const addButton = document.querySelector("button.add-another");
 const toast = document.querySelector("#toast");
 const errorMsg = document.querySelector("#errorMsg");
-const newWorkout = document.querySelector(".new-workout")
+const newWorkout = document.querySelector(".new-workout");
+
+const wrapper = document.querySelector(".wrapper");
 
 let workoutType = null;
 let shouldNavigateAway = false;
@@ -38,10 +40,14 @@ function handleWorkoutTypeChange(event) {
 
   if (workoutType === "cardio") {
     cardioForm.classList.remove("d-none");
-    resistanceForm.classList.add("d-none");
+    resistanceForm.classList.add("d-none");       
   } else if (workoutType === "resistance") {
     resistanceForm.classList.remove("d-none");
     cardioForm.classList.add("d-none");
+    // wrapper.style.display = "none";
+    // wrapper.style.display = "block";
+    wrapper.offsetHeight;
+ 
   } else {
     cardioForm.classList.add("d-none");
     resistanceForm.classList.add("d-none");
