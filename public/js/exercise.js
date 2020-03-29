@@ -55,7 +55,7 @@ function handleWorkoutTypeChange(event) {
 function validateInputs() {
   let isValid = true;
   let positiveIntegerRegEx = /^\d+$/;
-  let positiveNumberRegEx = /^\d+\.\d*/; // Allow float or double
+  let positiveNumberRegEx = /^\d+(\.\d+)?$/; // Allow float or double
 
   if (workoutType === "resistance") {
     if (nameInput.value.trim() === "") {
