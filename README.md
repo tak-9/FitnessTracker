@@ -49,3 +49,10 @@ I have fixed the following issues with the frontend supplied as a course materia
 * Implemented new validation by frontend using regular expression.
 * It is now checked both by frontend using regular expression in JavaScript and backend using mongoose.
 
+
+## Migrate from mLab to MongoDB Atlas
+[The mLab MongoDB add-on will be removed from all Heroku apps on November 10, 2020.](https://devcenter.heroku.com/changelog-items/1823)
+
+[MongoDB Atlas Sandbox](https://www.mongodb.com/cloud/atlas) is now used for alternative. 
+
+[Migration Guide](https://gist.github.com/caprosset/67328b142afd0d47b19f72df7d69e655)
